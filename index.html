@@ -3,10 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#123e3c" />
+    <meta name="theme-color" content="#050708" />
     <meta name="description" content="Oliwia — PhD researcher studying PI3K signalling and quantitative live-cell imaging." />
     <title>Oliwia — PhD researcher</title>
+    <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'</script>
     <link rel="stylesheet" href="assets/style.css" />
+    <script src="assets/theme.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -17,6 +19,7 @@
         <a href="#research">Research</a>
         <a href="resources/venous-organoids/">Resources</a>
       </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme"><span aria-hidden="true"></span><b>Light</b></button>
     </header>
 
     <main id="main">
@@ -27,11 +30,7 @@
           <p class="lead">I study how cells communicate to regulate signalling—and build ways to see those dynamics unfold in real time.</p>
           <a class="button" href="#research">Explore my research <span aria-hidden="true">↓</span></a>
         </div>
-        <div class="signal-visual" aria-hidden="true">
-          <span class="cell c1"></span><span class="cell c2"></span><span class="cell c3"></span>
-          <span class="cell c4"></span><span class="cell c5"></span>
-          <svg viewBox="0 0 500 460"><path d="M40 236C100 108 170 344 245 191S390 98 462 207"/><path d="M62 330c92-116 133 62 214-28s140-90 178-47"/></svg>
-        </div>
+        <figure class="organoid-visual"><img src="assets/organoid-hero.png" alt="Conceptual fluorescent microscopy-inspired spherical organoid with branching vascular structures" /><figcaption><span>Concept visual</span> Immunofluorescence-inspired organoid</figcaption></figure>
       </section>
 
       <section class="about wrap" id="about">
