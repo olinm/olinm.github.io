@@ -10,8 +10,7 @@ Wait for GitHub to confirm that the site is live before generating QR codes.
 
 Permanent resource links:
 
-- `https://olinm.github.io/resources/venous-organoids/#live-cell-imaging`
-- `https://olinm.github.io/resources/venous-organoids/#quantification-walkthrough`
-- `https://olinm.github.io/resources/venous-organoids/#additional-resources`
+- HGF work: `https://olinm.github.io/resources/venous-organoids/hgf/`
+- Long-term videos: `https://olinm.github.io/resources/venous-organoids/long-term-videos/`
 
-Do not rename the `resources/venous-organoids` folders or the three section IDs after printing the QR codes.
+Do not rename these folders after printing the QR codes.
