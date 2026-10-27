@@ -109,11 +109,17 @@ body{font-family:"Trebuchet MS",Trebuchet,Arial,sans-serif;font-weight:500}.nav{
 .condition-readout strong{text-decoration-color:var(--dose-color,#9b9b9b)}
 .condition-readout .condition-dose,
 .population-preview-head .condition-dose{color:var(--dose)}
+.population-preview-metrics .preview-frequency>span,
+.population-preview-metrics .preview-turnover>span{font-size:0}
+.population-preview-metrics .preview-frequency>span:after,
+.population-preview-metrics .preview-turnover>span:after{font-size:.57rem}
+.population-preview-metrics .preview-frequency>span:after{content:"Median activity frequency"}
+.population-preview-metrics .preview-turnover>span:after{content:"Median contact turnover"}
 
 /* Keep the population movie visible while the comparison plots scroll on phones. */
 @media(max-width:700px){
-  .population-workspace{display:block}
-  .population-preview{position:sticky;top:0;z-index:30;display:grid;grid-template-columns:minmax(0,.9fr) minmax(165px,1.1fr);grid-template-rows:auto 1fr;margin-bottom:1rem;box-shadow:0 12px 32px #000c}
+  .population-workspace{display:flex;flex-direction:column}
+  .population-preview{position:sticky;top:0;z-index:30;order:1;display:grid;grid-template-columns:minmax(0,.9fr) minmax(165px,1.1fr);grid-template-rows:auto 1fr;margin-bottom:1rem;box-shadow:0 12px 32px #000c}
   .population-preview-head{grid-column:1;grid-row:1;padding:.65rem .75rem}
   .population-preview-head span{font-size:.48rem}
   .population-preview-head strong{font-size:.8rem}
@@ -130,9 +136,11 @@ body{font-family:"Trebuchet MS",Trebuchet,Arial,sans-serif;font-weight:500}.nav{
   .population-preview-metrics>div.is-active{display:flex}
   .population-preview-metrics>.preview-activity{min-height:0}
   .population-preview-metrics span{font-size:.48rem}
+  .population-preview-metrics .preview-frequency>span:after,
+  .population-preview-metrics .preview-turnover>span:after{font-size:.48rem}
   .population-preview-metrics strong{font-size:.78rem}
   .population-preview-metrics .preview-activity strong{padding:.2rem .4rem;font-size:.52rem}
   .population-preview-metrics small{font-size:.52rem}
   .population-preview-note{display:none}
-  .population-workspace .population-grid{margin-top:0}
+  .population-workspace .population-grid{order:2;margin-top:0}
 }
