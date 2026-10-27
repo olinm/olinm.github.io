@@ -96,7 +96,7 @@ body{font-family:"Trebuchet MS",Trebuchet,Arial,sans-serif;font-weight:500}.nav{
 .heatmap-cursor{fill:color-mix(in srgb,var(--green) 3%,transparent);stroke:color-mix(in srgb,var(--green) 55%,transparent)}
 .mini-selected{fill:var(--green)}
 .condition-dose{color:var(--dose);font-style:normal;font-weight:800}
-.dose-unit{text-transform:none;letter-spacing:0}
+.dose-unit,.condition-dose .dose-unit{color:inherit;text-transform:none;letter-spacing:0}
 
 /* Treatment selector follows the same Vehicle-to-HGF concentration palette. */
 .choice[data-dose="DMSO"]{--dose-color:#9b9b9b}
