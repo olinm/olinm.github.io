@@ -73,3 +73,9 @@
 /* Timeline caption and abbreviation key */
 .timeline-graphic figcaption{position:static;display:grid;grid-template-columns:auto 1fr;gap:1rem 2rem;align-items:start;margin-top:.75rem;padding:.75rem 0 0;border-top:1px solid var(--line);color:var(--muted);background:transparent;font-size:.58rem;font-weight:600;letter-spacing:0;text-transform:none}.timeline-graphic figcaption>span{font-weight:800;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}.timeline-graphic figcaption p{margin:0;line-height:1.55}.timeline-graphic figcaption b{color:var(--text);font-weight:800}
 @media(max-width:700px){.timeline-graphic figcaption{position:sticky;left:.45rem;display:block;width:calc(100vw - 2.4rem);margin-top:.55rem;padding:.65rem .2rem 0}.timeline-graphic figcaption>span{display:block;margin-bottom:.45rem;white-space:normal}.timeline-graphic figcaption p{font-size:.55rem}}
+
+/* Keep the complete Vehicle comparison visible above treatment movies on tablets. */
+@media(min-width:701px) and (max-width:980px){.vehicle-sticky{position:sticky;top:0;z-index:30;box-shadow:0 12px 32px #000c}}
+
+/* Long/short and dose comparisons remain paired in narrow previews. */
+@media(max-width:700px){.regimen-comparison .comparison-heading,.regimen-comparison .comparison-pair{grid-template-columns:1fr 1fr}.regimen-comparison .comparison-heading span:last-child{display:block}}
