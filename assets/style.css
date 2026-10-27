@@ -107,6 +107,11 @@ body{font-family:"Trebuchet MS",Trebuchet,Arial,sans-serif;font-weight:500}.nav{
 .choice[data-dose]:hover,
 .choice[data-dose].active,
 .choice[data-dose]:focus-visible{border-color:var(--dose-color);color:var(--text);background:color-mix(in srgb,var(--dose-color) 12%,transparent);box-shadow:0 0 22px color-mix(in srgb,var(--dose-color) 18%,transparent)}
+.choice[data-genotype="WT"]{--genotype-color:#8b908e}
+.choice[data-genotype="H1047R"]{--genotype-color:#f2a23a}
+.choice[data-genotype]:hover,
+.choice[data-genotype].active,
+.choice[data-genotype]:focus-visible{border-color:var(--genotype-color);color:var(--genotype-color);background:color-mix(in srgb,var(--genotype-color) 10%,transparent);box-shadow:0 0 20px color-mix(in srgb,var(--genotype-color) 16%,transparent);outline:none}
 .condition-readout strong{text-decoration-color:var(--dose-color,#9b9b9b)}
 .condition-readout .condition-dose,
 .population-preview-head .condition-dose{color:var(--dose)}
