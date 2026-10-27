@@ -190,3 +190,10 @@ body{font-family:"Trebuchet MS",Trebuchet,Arial,sans-serif;font-weight:500}.nav{
 .time-stamp{padding:.48rem .68rem;border:1px solid #ffffff30;border-radius:99px;background:#050708d9;font-weight:800;line-height:1;box-shadow:0 4px 18px #0006}
 .population-preview-frame>span{border:1px solid #ffffff30;border-radius:99px;background:#050708d9;font-weight:800;line-height:1;box-shadow:0 4px 18px #0006}
 .population-preview-note{display:none}
+
+/* Keep HGF movie controls clear of the organoid, matching the long-term videos. */
+.frame-stage .play-button,
+.mobile-viewer-sticky>.frame-stage .play-button,
+.population-preview-frame .preview-play{left:auto;top:auto;right:.75rem;bottom:.75rem;width:2.65rem;height:2.65rem;transform:none;background:#050708d9;box-shadow:0 4px 18px #0008}
+.population-preview-frame .preview-play:before{left:50%;top:50%;transform:translate(-35%,-50%)}
+.population-preview-frame .preview-play.is-playing:before{left:50%;top:50%;transform:translate(-50%,-50%)}
