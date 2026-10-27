@@ -96,6 +96,7 @@ body{font-family:"Trebuchet MS",Trebuchet,Arial,sans-serif;font-weight:500}.nav{
 .heatmap-cursor{fill:color-mix(in srgb,var(--green) 3%,transparent);stroke:color-mix(in srgb,var(--green) 55%,transparent)}
 .mini-selected{fill:var(--green)}
 .condition-dose{color:var(--dose);font-style:normal;font-weight:800}
+.dose-unit{text-transform:none;letter-spacing:0}
 
 /* Treatment selector follows the same Vehicle-to-HGF concentration palette. */
 .choice[data-dose="DMSO"]{--dose-color:#9b9b9b}
@@ -109,6 +110,7 @@ body{font-family:"Trebuchet MS",Trebuchet,Arial,sans-serif;font-weight:500}.nav{
 .condition-readout strong{text-decoration-color:var(--dose-color,#9b9b9b)}
 .condition-readout .condition-dose,
 .population-preview-head .condition-dose{color:var(--dose)}
+.choice[data-dose],.dose-key,.comparison-dose,.condition-dose{white-space:nowrap}
 .population-preview-metrics .preview-frequency>span,
 .population-preview-metrics .preview-turnover>span{font-size:0}
 .population-preview-metrics .preview-frequency>span:after,
@@ -144,3 +146,35 @@ body{font-family:"Trebuchet MS",Trebuchet,Arial,sans-serif;font-weight:500}.nav{
   .population-preview-note{display:none}
   .population-workspace .population-grid{order:2;margin-top:0}
 }
+
+/* On phones, keep the individual movie visible while its linked plots scroll. */
+@media(max-width:700px){
+  .hgf-explorer .viewer-card{display:contents}
+  .hgf-explorer .viewer-card>.card-head,
+  .hgf-explorer .viewer-card>.viewer-population-context,
+  .hgf-explorer .viewer-card>.viewer-tools{display:none}
+  .hgf-explorer .viewer-card>.scrubber,
+  .hgf-explorer .viewer-card>.figure-note{margin:0;padding:.8rem 1rem;background:var(--panel)}
+  .hgf-explorer .viewer-card>.scrubber{padding-block:.75rem}
+  .hgf-explorer .viewer-card>.figure-note{padding-bottom:1rem}
+  .mobile-viewer-sticky{position:sticky;top:0;z-index:28;display:flex;width:100%;flex-direction:column;align-items:center;background:#080c0b;box-shadow:0 12px 32px #000c}
+  .mobile-viewer-sticky>.frame-stage{position:relative;width:100%;height:auto;aspect-ratio:1;border-block:1px solid var(--line);box-shadow:none}
+  .mobile-viewer-sticky>.frame-stage img{padding:0;object-fit:contain}
+  .mobile-viewer-toolbar{position:relative;z-index:4;display:grid;width:100%;gap:.45rem;padding:.6rem .7rem;border-bottom:1px solid var(--line);background:#080c0bf2;backdrop-filter:blur(8px)}
+  .mobile-viewer-identity{display:flex;justify-content:space-between;gap:.6rem;align-items:baseline;min-width:0}
+  .mobile-viewer-identity strong{min-width:0;overflow:hidden;color:var(--text);font-size:.7rem;white-space:nowrap;text-overflow:ellipsis}
+  .mobile-viewer-identity strong[data-genotype="H1047R"]{color:#f2a23a}
+  .mobile-viewer-identity strong i{font-style:italic}.mobile-viewer-identity strong sup{font-size:.62em}
+  .mobile-viewer-identity small{flex:0 0 auto;color:var(--muted);font-size:.58rem}
+  .mobile-viewer-controls{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:.35rem;align-items:center}
+  .mobile-viewer-controls>span{padding:.25rem .4rem;border:1px solid var(--green);border-radius:99px;color:var(--green);font-size:.48rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+  .mobile-viewer-controls select,.mobile-viewer-controls button{min-width:0;padding:.3rem .4rem;border:1px solid var(--line);border-radius:99px;color:var(--text);background:#080b0c;font:600 .52rem "Trebuchet MS",sans-serif}
+  .mobile-viewer-controls button{color:var(--green);cursor:pointer}
+  .mobile-viewer-sticky>.frame-stage .time-stamp{top:.6rem;left:.6rem}
+  .mobile-viewer-sticky>.frame-stage .play-button{top:50%}
+}
+.mobile-viewer-sticky{display:contents}.mobile-viewer-toolbar{display:none}
+@media(max-width:700px){.mobile-viewer-sticky{display:flex}.mobile-viewer-toolbar{display:grid}}
+
+/* Match the compact time badge used by the long-term treatment movies. */
+.time-stamp{padding:.48rem .68rem;border:1px solid #ffffff30;border-radius:99px;background:#050708d9;font-weight:800;line-height:1;box-shadow:0 4px 18px #0006}
