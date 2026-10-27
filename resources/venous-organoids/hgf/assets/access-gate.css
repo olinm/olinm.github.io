@@ -1,0 +1,17 @@
+.access-locked{overflow:hidden}
+.access-locked body>*:not(#access-gate){visibility:hidden}
+#access-gate{position:fixed;inset:0;z-index:9999;display:grid;padding:1.5rem;place-items:center;color:var(--text);background:radial-gradient(circle at 70% 35%,#8cff4b12,transparent 30%),#050708}
+.access-card{width:min(560px,100%);padding:clamp(1.5rem,5vw,3rem);border:1px solid var(--line);background:#090d0c;box-shadow:0 30px 100px #000}
+.access-card .access-kicker{margin:0 0 1rem;color:var(--green);font-size:.65rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.access-card h1{margin:0;font-size:clamp(2.2rem,8vw,4.5rem);line-height:.92}
+.access-card>p:not(.access-kicker,.access-error){margin:1.4rem 0;color:var(--muted)}
+.access-card>label{display:block;margin-bottom:.45rem;color:var(--muted);font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.access-entry{display:grid;grid-template-columns:1fr auto;gap:.6rem}
+.access-entry input,.access-entry button{min-height:3rem;border:1px solid var(--line);color:var(--text);background:#050708;font:inherit}
+.access-entry input{min-width:0;padding:.7rem .85rem}
+.access-entry input:focus{border-color:var(--green);outline:none}
+.access-entry button{padding:.7rem 1rem;border-color:var(--green);border-radius:99px;font-size:.7rem;font-weight:800;cursor:pointer}
+.access-entry button:hover{color:var(--bg);background:var(--green)}
+.access-entry button:disabled{opacity:.55;cursor:wait}
+.access-error{min-height:1.4rem;margin:.65rem 0 0;color:#ff7063;font-size:.7rem}
+@media(max-width:520px){.access-entry{grid-template-columns:1fr}.access-entry button{width:100%}}
