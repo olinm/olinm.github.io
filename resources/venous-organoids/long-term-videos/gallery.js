@@ -6,6 +6,9 @@ const stages=[{from:1,to:1,label:'iPSCs',colour:'#E4DDEA'},{from:2,to:7,label:'i
 const treatmentColour=treatment=>treatment.includes('Alpelisib')?(treatment.includes('500 nM')?'#6f9f2d':'#99c83a'):(treatment.includes('1 µM')?'#d74736':'#f0644f');
 const selectionPlan=[['B6',5],['E6',2],['C6',2],['D6',3],['C5',3],['D5',3],['F6',2],['G6',1],['F5',5],['G5',5],['C4',2],['D4',5],['C3',1],['D3',3],['F4',3],['G4',1],['F3',3],['G3',2]];
 let videos=[],activeTreatmentVideos=[],videoObserver=null,playbackRate=1,autoplayEnabled=true;
+const videoPreloadObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;const video=entry.target;video.preload='auto';if(video.currentSrc||video.src||video.querySelector('source')?.src)video.load();videoPreloadObserver.unobserve(video)}),{rootMargin:'900px 0px',threshold:0});
+function observeVideoPreloads(){document.querySelectorAll('video:not([data-preload-observed])').forEach(video=>{video.dataset.preloadObserved='true';videoPreloadObserver.observe(video)})}
+new MutationObserver(observeVideoPreloads).observe(grid,{childList:true,subtree:true});observeVideoPreloads();
 function options(key){[...new Set(videos.map(v=>v[key]))].sort().forEach(v=>filters[key].insertAdjacentHTML('beforeend',`<option value="${esc(v)}">${esc(v)}</option>`))}
 const eventTimes=r=>r==='Long-term'?[24,48,72,96,120]:[96,120];
 function eventStrip(r){return `<div class="video-event-strip" aria-label="${r} inhibitor schedule">${eventTimes(r).map((h,i)=>`<span style="--event-position:${h/148*100}%"><i></i><b>${i?'Replenished':'Added'}</b><small>${h} h</small></span>`).join('')}<em></em></div>`}
