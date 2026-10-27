@@ -188,4 +188,5 @@ body{font-family:"Trebuchet MS",Trebuchet,Arial,sans-serif;font-weight:500}.nav{
 
 /* Match the compact time badge used by the long-term treatment movies. */
 .time-stamp{padding:.48rem .68rem;border:1px solid #ffffff30;border-radius:99px;background:#050708d9;font-weight:800;line-height:1;box-shadow:0 4px 18px #0006}
+.population-preview-frame>span{border:1px solid #ffffff30;border-radius:99px;background:#050708d9;font-weight:800;line-height:1;box-shadow:0 4px 18px #0006}
 .population-preview-note{display:none}
