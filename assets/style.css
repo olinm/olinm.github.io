@@ -109,3 +109,30 @@ body{font-family:"Trebuchet MS",Trebuchet,Arial,sans-serif;font-weight:500}.nav{
 .condition-readout strong{text-decoration-color:var(--dose-color,#9b9b9b)}
 .condition-readout .condition-dose,
 .population-preview-head .condition-dose{color:var(--dose)}
+
+/* Keep the population movie visible while the comparison plots scroll on phones. */
+@media(max-width:700px){
+  .population-workspace{display:block}
+  .population-preview{position:sticky;top:0;z-index:30;display:grid;grid-template-columns:minmax(0,.9fr) minmax(165px,1.1fr);grid-template-rows:auto 1fr;margin-bottom:1rem;box-shadow:0 12px 32px #000c}
+  .population-preview-head{grid-column:1;grid-row:1;padding:.65rem .75rem}
+  .population-preview-head span{font-size:.48rem}
+  .population-preview-head strong{font-size:.8rem}
+  .population-preview-head>small,.population-preview-basis{display:none}
+  .preview-speed{margin-top:.35rem;font-size:.5rem}
+  .preview-speed select{padding:.2rem 1.35rem .2rem .4rem}
+  .population-preview-frame{grid-column:2;grid-row:1/3;min-height:190px;aspect-ratio:auto}
+  .population-preview-frame>span{left:.4rem;top:.4rem;padding:.2rem .35rem;font-size:.52rem}
+  .preview-play{width:42px;height:42px}
+  .preview-play:before{left:17px;top:12px}
+  .preview-play.is-playing:before{left:13px;top:11px}
+  .population-preview-metrics{grid-column:1;grid-row:2;display:block;border-top:0}
+  .population-preview-metrics>div{display:none;min-height:0;padding:.6rem .75rem}
+  .population-preview-metrics>div.is-active{display:flex}
+  .population-preview-metrics>.preview-activity{min-height:0}
+  .population-preview-metrics span{font-size:.48rem}
+  .population-preview-metrics strong{font-size:.78rem}
+  .population-preview-metrics .preview-activity strong{padding:.2rem .4rem;font-size:.52rem}
+  .population-preview-metrics small{font-size:.52rem}
+  .population-preview-note{display:none}
+  .population-workspace .population-grid{margin-top:0}
+}
