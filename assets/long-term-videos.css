@@ -79,3 +79,14 @@
 
 /* Long/short and dose comparisons remain paired in narrow previews. */
 @media(max-width:700px){.regimen-comparison .comparison-heading,.regimen-comparison .comparison-pair{grid-template-columns:1fr 1fr}.regimen-comparison .comparison-heading span:last-child{display:block}}
+
+/* Mobile dropdowns must paint above the sticky vehicle video panel. */
+@media(max-width:980px){
+  .video-controls{position:relative;z-index:60;isolation:isolate;overflow:visible}
+  .video-controls .rich-filter{position:relative;overflow:visible}
+  .video-controls .rich-filter:has(details[open]){z-index:80}
+  .video-controls .rich-filter details[open]{z-index:81}
+  .video-controls .rich-filter details>div{z-index:82}
+  .video-workspace{position:relative;z-index:1}
+  .vehicle-sticky{z-index:2}
+}
